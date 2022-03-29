@@ -107,9 +107,15 @@ class ApiMahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function search(Request $request)
     {
-        //
+        $data = $request->get('data');
+
+        $drivers = Mahasiswa::where('nama_mahasiswa', 'like', "%{$data}%")
+            ->orWhere('jenis_kelamin', 'like', "%{$data}%")
+            ->get();
+
+        return response(['data' => $drivers], 200);
     }
 
     /**

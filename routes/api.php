@@ -23,3 +23,4 @@ Route::get('mahasiswa', [ApiMahasiswaController::class, 'get_data_mahasiswa']);
 Route::post('mahasiswa/insert_data', [ApiMahasiswaController::class, 'insert_data_mahasiswa']);
 Route::post('mahasiswa/update_data/{npm_mahasiswa}', [ApiMahasiswaController::class, 'update_data_mahasiswa']);
 Route::post('mahasiswa/delete_data/{npm_mahasiswa}', [ApiMahasiswaController::class, 'delete_data_mahasiswa']);
+Route::get('mahasiswa/search', [ApiMahasiswaController::class, 'search']);
